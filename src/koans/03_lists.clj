@@ -9,7 +9,7 @@
   (= 1 (first '(1 2 3 4 5)))
 
   "As well as the rest"
-  (= [2 3 4 5] (rest '(1 2 3 4 5)))
+  (= '(2 3 4 5) (rest '(1 2 3 4 5)))
 
   "Count your blessings"
   (= 3 (count '(dracula dooku chocula)))
@@ -18,7 +18,7 @@
   (= 0 (count '()))
 
   "The rest, when nothing is left, is empty"
-  (= [] (rest '(100)))
+  (= () (rest '(100)))
 
   "Construction by adding an element to the front is easy"
   (= [:a :b :c :d :e] (cons :a '(:b :c :d :e)))
@@ -34,9 +34,9 @@
 
   "But watch out if you try to pop nothing"
   (= "No dice!" (try
-          (pop '())
-          (catch IllegalStateException e
-            "No dice!")))
+                  (pop '())
+                  (catch IllegalStateException e
+                    "No dice!")))
 
   "The rest of nothing isn't so strict"
   (= [] (try

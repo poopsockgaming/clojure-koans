@@ -15,8 +15,9 @@
   "You can even get certain characters"
   (= \C (get "Characters" 0))
 
-  "Or even count the characters"
+  "Or even count the characters"              #_"previous problem started with 0 but not this one"
   (= 11 (count "Hello World"))
+
 
   "But strings and characters are not the same"
   (= false (= \c "c"))

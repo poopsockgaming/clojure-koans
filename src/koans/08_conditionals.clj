@@ -22,7 +22,9 @@
   (= :glory (if (not (empty? ())) :doom :glory))
 
   "You may have a multitude of possible paths"
-  (let [x 5] (= :your-road (cond (= x 4) :road-not-taken (= x 4) :another-road-not-taken :else :your-road)))
+  (let [x 5] (= :your-road (cond (= x 4) :road-not-taken
+                                 (= x 4) :another-road-not-taken
+                                 :else :your-road)))
 
   "Or your fate may be sealed"
   (= 'doom (if-not (zero? 1)
