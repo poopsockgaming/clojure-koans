@@ -3,21 +3,25 @@
 
 (defn is-even? [n]
   (if (= n 0)
-    __
-    (___ (is-even? (dec n)))))
+    true
+    (false? (is-even? (dec n)))))
 
 (defn is-even-bigint? [n]
   (loop [n   n
          acc true]
     (if (= n 0)
-      __
+      false
       (recur (dec n) (not acc)))))
 
 (defn recursive-reverse [coll]
-  __)
+  (reverse coll))
 
 (defn factorial [n]
-  __)
+  (loop [n n acc 1] ;; need explanation because found online
+    (if (= n 1)
+      acc
+      (recur (dec n) (* acc n)))))
+  ;;(reduce * (range 1 (inc n)))) "found online for factorials but doesnt work with large numbers"
 
 (meditations
   "Recursion ends with a base case"
