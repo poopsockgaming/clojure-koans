@@ -12,10 +12,12 @@
          [:foo :bar]))
 
   "Whether in function definitions"
-  (= (str "An Oxford comma list of apples, "
-          "oranges, "
-          "and pears.")
+  (= "An Oxford comma list of apples, oranges, and pears."
      ((fn [[a b c]] (str "An Oxford comma list of " a ", " b ", and " c "."))
+      (comment (fn [some-seq] (let [a (first  some-seq)
+                                    b (second sme-seq)
+                                    c (nth some-seq 2)]
+                                (str "An Oxford comma list of " a ", " b ", and " c "."))))
       ["apples" "oranges" "pears"]))
 
   "Or in let expressions"
@@ -27,7 +29,7 @@
   "You can regain the full argument if you like arguing" ;; need explanation
   (= {:original-parts ["Stephen" "Hawking"] :named-parts {:first "Stephen" :last "Hawking"}}
      (let [[first-name last-name :as full-name] ["Stephen" "Hawking"]]
-       {:original-parts ["Stephen" "Hawking"] :named-parts {:first "Stephen" :last "Hawking"}}))
+       {:original-parts full-name :named-parts {:first first-name :last last-name}}))
 
   "Break up maps by key"
   (= "123 Test Lane, Testerville, TX"

@@ -4,7 +4,7 @@
 (defn is-even? [n]
   (if (= n 0)
     true
-    (false? (is-even? (dec n)))))
+    (not (is-even? (dec n)))))
 
 (defn is-even-bigint? [n]
   (loop [n   n

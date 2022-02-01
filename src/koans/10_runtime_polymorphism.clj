@@ -10,19 +10,19 @@
                    "!")))
 
 (defmulti diet (fn [x] (:eater x))) ;;parameter used as function in a string along with rest of quote.
-(defmethod diet :herbivore [a] (str (a :name) " eats veggies."))
-(defmethod diet :carnivore [a] (str (a :name) " eats animals."))
-(defmethod diet :default [a]  (str "I don't know what " (a :name) " eats."))
+(defmethod diet :herbivore [a] (str (:name a) " eats veggies."))
+(defmethod diet :carnivore [a] (str (:name a) " eats animals."))
+(defmethod diet :default [a]  (str "I don't know what " (:name a) " eats."))
 
 (meditations
   "Some functions can be used in different ways - with no arguments"
-  (= ' (hello))
+  (= "Hello World!" (hello))
 
   "With one argument"
-  (= ' (hello "world"))
+  (= "Hello, you silly world." (hello "world"))
 
   "Or with many arguments"
-  (= '
+  (= "Hello to this group: Peter, Paul, Mary!"
      (hello "Peter" "Paul" "Mary"))
 
   "Multimethods allow more complex dispatching"

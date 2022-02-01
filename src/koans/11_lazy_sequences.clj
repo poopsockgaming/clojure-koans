@@ -26,3 +26,6 @@
   "Iteration can be used for repetition" ;;Found on blog about iteration
   (= (repeat 100 "hello")
      (take 100 (iterate #(str %) "hello"))))
+
+;#(str% )
+;(fn [x] (str x))

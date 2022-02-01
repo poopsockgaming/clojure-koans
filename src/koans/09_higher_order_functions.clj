@@ -24,12 +24,14 @@
   (= [10 20 30] (map (fn [x] (* 10 x)) (filter (fn [x] (> 4 x)) [1 2 3 4 5 6 7 8])))
 
   "Reducing can increase the result"
-  (=  (reduce (fn [a b] (* a b)) [1 2 3 4]))
+  (= 24 (reduce (fn [a b] (* a b)) [1 2 3 4]))
 
   "You can start somewhere else"
   (= 2400 (reduce (fn [a b] (* a b)) 100 [1 2 3 4]))
 
   "Numbers are not the only things one can reduce"
   (= "longest" (reduce (fn [a b]
-                         (if (< 0) b a))
+                         (if (> (count b) (count a))
+                           b
+                           a))
                        ["which" "word" "is" "longest"])))
