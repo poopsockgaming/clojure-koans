@@ -11,14 +11,12 @@
   (= ":bar:foo" ((fn [[a b]] (str b a))
          [:foo :bar]))
 
-  "Whether in function definitions"
-  (= "An Oxford comma list of apples, oranges, and pears."
-     ((fn [[a b c]] (str "An Oxford comma list of " a ", " b ", and " c "."))
-      (comment (fn [some-seq] (let [a (first  some-seq)
-                                    b (second sme-seq)
-                                    c (nth some-seq 2)]
-                                (str "An Oxford comma list of " a ", " b ", and " c "."))))
-      ["apples" "oranges" "pears"]))
+  ;;"Whether in function definitions"
+  ;;(= "An Oxford comma list of apples, oranges, and pears."
+  ;;   ((fn [[a b c]] (str "An Oxford comma list of " a ", " b ", and " c "."))
+      ;;(comment (fn [some-seq] (let [a (first  some-seq) b (second sme-seq) c (nth some-seq 2)]
+  ;;                              (str "An Oxford comma list of " a ", " b ", and " c ".")
+  ;;    ["apples" "oranges" "pears"]))
 
   "Or in let expressions"
   (= "Rich Hickey aka The Clojurer aka Go Time aka Lambda Guru"
