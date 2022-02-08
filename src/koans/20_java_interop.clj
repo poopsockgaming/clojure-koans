@@ -16,4 +16,4 @@
           (.getCount latch)))
 
   "Static methods are slashing prices!"
-  (== 1024 (Math/pow 2 10)))
+  (== 1024.0 (Math/pow 2 10)))
