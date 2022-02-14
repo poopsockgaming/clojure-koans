@@ -33,11 +33,11 @@
  "Most operations that take a scalar value as an argument can be threaded-first"
  (= 6
     (-> {}
-        (assoc :a 1)
-        (assoc :b 2)
+        (assoc :a 1) ;; {:a 1}
+        (assoc :b 2) ;; {:a 1 :b 2}
         (assoc :c {:d 4
-                   :e 5})
-        (update-in [:c :e] inc)
+                   :e 5}) ;; {:a 1 :b 2 :c {:d 4 :e 5}}
+        (update-in [:c :e] inc) ;; {:a 1 :b 2 :c {:d 4 :e 6}}
         (get-in [:c :e])))
 
  "We can use functions we have written ourselves that follow this pattern"
